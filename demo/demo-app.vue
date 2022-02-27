@@ -15,7 +15,10 @@
             :searchable="false"
             :show-count="true"
         >
-        
+        <template #option-label="{node}" slot-scope="{ node }" class="language-list_item vue-treeselect__label">
+                      <!-- <img :src="node.raw.flag" alt="flag" width="16" /> -->
+                      <span class="language-name">{{node.id}}</span>
+                    </template>
         </vue-treeselect>
         <div>
             Selected: {{selected}}

@@ -3866,6 +3866,25 @@ $({ target: 'Array', proto: true, forced: !HAS_SPECIES_SUPPORT || !USES_TO_LENGT
 
 /***/ }),
 
+/***/ "d959":
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+// runtime helper for setting properties on components
+// in a tree-shakable way
+exports.default = (sfc, props) => {
+    const target = sfc.__vccOpts || sfc;
+    for (const [key, val] of props) {
+        target[key] = val;
+    }
+    return target;
+};
+
+
+/***/ }),
+
 /***/ "da84":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4103,7 +4122,7 @@ if (typeof window !== 'undefined') {
 // EXTERNAL MODULE: external {"commonjs":"vue","commonjs2":"vue","root":"Vue"}
 var external_commonjs_vue_commonjs2_vue_root_Vue_ = __webpack_require__("8bbf");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Treeselect.vue?vue&type=template&id=4fa337e8
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--7!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Treeselect.vue?vue&type=template&id=4fa337e8
 
 function Treeselectvue_type_template_id_4fa337e8_render(_ctx, _cache, $props, $setup, $data, $options) {
   var _component_HiddenFields = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("HiddenFields");
@@ -6458,7 +6477,7 @@ var instanceId = 0;
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.array.join.js
 var es_array_join = __webpack_require__("a15b");
 
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/HiddenFields.vue?vue&type=script&lang=js
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/HiddenFields.vue?vue&type=script&lang=js
 
 
 
@@ -6478,7 +6497,6 @@ function stringifyValue(value) {
   inject: ['instance'],
   functional: true,
   render: function render(context) {
-    var h = arguments[0];
     var instance = context.instance;
     if (!instance.name || instance.disabled || !instance.hasValue) return null;
     var stringifiedValues = instance.internalValue.map(stringifyValue);
@@ -6497,7 +6515,9 @@ function stringifyValue(value) {
 
 
 
-/* harmony default export */ var HiddenFields = (HiddenFieldsvue_type_script_lang_js);
+const __exports__ = HiddenFieldsvue_type_script_lang_js;
+
+/* harmony default export */ var HiddenFields = (__exports__);
 // EXTERNAL MODULE: ./node_modules/core-js/modules/es.object.to-string.js
 var es_object_to_string = __webpack_require__("d3b7");
 
@@ -6560,7 +6580,7 @@ function deepExtend(target, source) {
 
   return target;
 }
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Input.vue?vue&type=script&lang=js
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Input.vue?vue&type=script&lang=js
 
 
 
@@ -6782,7 +6802,6 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
       }
     },
     renderInputContainer: function renderInputContainer() {
-      var h = this.$createElement;
       var instance = this.instance;
       var props = {};
       var children = [];
@@ -6820,7 +6839,6 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
       });
     },
     renderInput: function renderInput() {
-      var h = this.$createElement;
       var instance = this.instance;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("input", {
         "ref": "input",
@@ -6839,7 +6857,6 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
       }, null);
     },
     renderSizer: function renderSizer() {
-      var h = this.$createElement;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
         "ref": "sizer",
         "class": "vue-treeselect__sizer"
@@ -6861,14 +6878,15 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
 
 
 
-/* harmony default export */ var Input = (Inputvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Placeholder.vue?vue&type=script&lang=js
+const Input_exports_ = Inputvue_type_script_lang_js;
+
+/* harmony default export */ var Input = (Input_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Placeholder.vue?vue&type=script&lang=js
 
 /* harmony default export */ var Placeholdervue_type_script_lang_js = ({
   name: 'vue-treeselect--placeholder',
   inject: ['instance'],
   render: function render() {
-    var h = arguments[0];
     var instance = this.instance;
     var placeholderClass = {
       'vue-treeselect__placeholder': true,
@@ -6884,8 +6902,10 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
 
 
 
-/* harmony default export */ var Placeholder = (Placeholdervue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/SingleValue.vue?vue&type=script&lang=js
+const Placeholder_exports_ = Placeholdervue_type_script_lang_js;
+
+/* harmony default export */ var Placeholder = (Placeholder_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/SingleValue.vue?vue&type=script&lang=js
 
 
 
@@ -6903,7 +6923,6 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
     }
   },
   render: function render() {
-    var h = arguments[0];
     var instance = this.instance,
         renderValueContainer = this.$parent.renderValueContainer;
     var shouldShowValue = instance.hasValue && !instance.trigger.searchQuery;
@@ -6918,8 +6937,10 @@ var keysThatRequireMenuBeingOpen = [KEY_CODES.ENTER, KEY_CODES.END, KEY_CODES.HO
 
 
 
-/* harmony default export */ var SingleValue = (SingleValuevue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/icons/Delete.vue?vue&type=template&id=12b4a02e
+const SingleValue_exports_ = SingleValuevue_type_script_lang_js;
+
+/* harmony default export */ var SingleValue = (SingleValue_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--7!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/icons/Delete.vue?vue&type=template&id=12b4a02e
 
 var _hoisted_1 = {
   xmlns: "http://www.w3.org/2000/svg",
@@ -6933,18 +6954,24 @@ var _hoisted_2 = /*#__PURE__*/Object(external_commonjs_vue_commonjs2_vue_root_Vu
 function Deletevue_type_template_id_12b4a02e_render(_ctx, _cache, $props, $setup, $data, $options) {
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("svg", _hoisted_1, [_hoisted_2]);
 }
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/icons/Delete.vue?vue&type=script&lang=js
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/icons/Delete.vue?vue&type=script&lang=js
 /* harmony default export */ var Deletevue_type_script_lang_js = ({
   name: 'vue-treeselect--x'
 });
+// EXTERNAL MODULE: ./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/exportHelper.js
+var exportHelper = __webpack_require__("d959");
+var exportHelper_default = /*#__PURE__*/__webpack_require__.n(exportHelper);
+
 // CONCATENATED MODULE: ./src/components/icons/Delete.vue
 
 
 
-Deletevue_type_script_lang_js.render = Deletevue_type_template_id_12b4a02e_render
 
-/* harmony default export */ var Delete = (Deletevue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/MultiValueItem.vue?vue&type=script&lang=js
+
+const Delete_exports_ = /*#__PURE__*/exportHelper_default()(Deletevue_type_script_lang_js, [['render',Deletevue_type_template_id_12b4a02e_render]])
+
+/* harmony default export */ var Delete = (Delete_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/MultiValueItem.vue?vue&type=script&lang=js
 
 
 
@@ -6974,7 +7001,6 @@ function MultiValueItemvue_type_script_lang_js_isSlot(s) {
     })
   },
   render: function render() {
-    var h = arguments[0];
     var instance = this.instance,
         node = this.node;
     var itemClass = {
@@ -7006,8 +7032,10 @@ function MultiValueItemvue_type_script_lang_js_isSlot(s) {
 
 
 
-/* harmony default export */ var MultiValueItem = (MultiValueItemvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/MultiValue.vue?vue&type=script&lang=js
+const MultiValueItem_exports_ = MultiValueItemvue_type_script_lang_js;
+
+/* harmony default export */ var MultiValueItem = (MultiValueItem_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/MultiValue.vue?vue&type=script&lang=js
 
 
 
@@ -7016,11 +7044,10 @@ function MultiValueItemvue_type_script_lang_js_isSlot(s) {
 
 
 /* harmony default export */ var MultiValuevue_type_script_lang_js = ({
-  name: 'vue-treeselect--multi-value',
-  inject: ['instance'],
+  name: "vue-treeselect--multi-value",
+  inject: ["instance"],
   methods: {
     renderMultiValueItems: function renderMultiValueItems() {
-      var h = this.$createElement;
       var instance = this.instance;
       return instance.internalValue.slice(0, instance.limit).map(instance.getNode).map(function (node) {
         return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(MultiValueItem, {
@@ -7030,7 +7057,6 @@ function MultiValueItemvue_type_script_lang_js_isSlot(s) {
       });
     },
     renderExceedLimitTip: function renderExceedLimitTip() {
-      var h = this.$createElement;
       var instance = this.instance;
       var count = instance.internalValue.length - instance.limit;
       if (count <= 0) return null;
@@ -7045,7 +7071,6 @@ function MultiValueItemvue_type_script_lang_js_isSlot(s) {
   render: function render() {
     var _this = this;
 
-    var h = arguments[0];
     var renderValueContainer = this.$parent.renderValueContainer; // const transitionGroupProps = {
     //   props: {
     //     tag: 'div',
@@ -7054,7 +7079,7 @@ function MultiValueItemvue_type_script_lang_js_isSlot(s) {
     //   },
     // }
 
-    return renderValueContainer(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("transition-group"), {
+    return renderValueContainer(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["TransitionGroup"], {
       "class": "vue-treeselect__multi-value",
       "tag": "div",
       "name": "vue-treeselect__multi-value-item--transition",
@@ -7075,8 +7100,10 @@ function MultiValueItemvue_type_script_lang_js_isSlot(s) {
 
 
 
-/* harmony default export */ var MultiValue = (MultiValuevue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/vue-loader-v16/dist/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/icons/Arrow.vue?vue&type=template&id=5d5151cb
+const MultiValue_exports_ = MultiValuevue_type_script_lang_js;
+
+/* harmony default export */ var MultiValue = (MultiValue_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist/templateLoader.js??ref--7!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/icons/Arrow.vue?vue&type=template&id=5d5151cb
 
 var Arrowvue_type_template_id_5d5151cb_hoisted_1 = {
   xmlns: "http://www.w3.org/2000/svg",
@@ -7090,7 +7117,7 @@ var Arrowvue_type_template_id_5d5151cb_hoisted_2 = /*#__PURE__*/Object(external_
 function Arrowvue_type_template_id_5d5151cb_render(_ctx, _cache, $props, $setup, $data, $options) {
   return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["openBlock"])(), Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createBlock"])("svg", Arrowvue_type_template_id_5d5151cb_hoisted_1, [Arrowvue_type_template_id_5d5151cb_hoisted_2]);
 }
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/icons/Arrow.vue?vue&type=script&lang=js
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/icons/Arrow.vue?vue&type=script&lang=js
 /* harmony default export */ var Arrowvue_type_script_lang_js = ({
   name: 'vue-treeselect--arrow'
 });
@@ -7098,10 +7125,12 @@ function Arrowvue_type_template_id_5d5151cb_render(_ctx, _cache, $props, $setup,
 
 
 
-Arrowvue_type_script_lang_js.render = Arrowvue_type_template_id_5d5151cb_render
 
-/* harmony default export */ var Arrow = (Arrowvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Control.vue?vue&type=script&lang=js
+
+const Arrow_exports_ = /*#__PURE__*/exportHelper_default()(Arrowvue_type_script_lang_js, [['render',Arrowvue_type_template_id_5d5151cb_render]])
+
+/* harmony default export */ var Arrow = (Arrow_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Control.vue?vue&type=script&lang=js
 
 
 
@@ -7159,7 +7188,6 @@ function Controlvue_type_script_lang_js_isSlot(s) {
   },
   methods: {
     renderX: function renderX() {
-      var h = this.$createElement;
       var instance = this.instance;
       var title = instance.multiple ? instance.clearAllText : instance.clearValueText;
       if (!this.shouldShowX) return null;
@@ -7172,7 +7200,6 @@ function Controlvue_type_script_lang_js_isSlot(s) {
       }, null)]);
     },
     renderArrow: function renderArrow() {
-      var h = this.$createElement;
       var instance = this.instance;
       var arrowClass = {
         'vue-treeselect__control-arrow': true,
@@ -7227,7 +7254,6 @@ function Controlvue_type_script_lang_js_isSlot(s) {
     }),
     // This is meant to be called by child `<Value />` component.
     renderValueContainer: function renderValueContainer(children) {
-      var h = this.$createElement;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
         "class": "vue-treeselect__value-container"
       }, Controlvue_type_script_lang_js_isSlot(children) ? children : {
@@ -7238,7 +7264,6 @@ function Controlvue_type_script_lang_js_isSlot(s) {
     }
   },
   render: function render() {
-    var h = arguments[0];
     var instance = this.instance;
     var ValueContainer = instance.single ? SingleValue : MultiValue;
     return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
@@ -7253,7 +7278,9 @@ function Controlvue_type_script_lang_js_isSlot(s) {
 
 
 
-/* harmony default export */ var Control = (Controlvue_type_script_lang_js);
+const Control_exports_ = Controlvue_type_script_lang_js;
+
+/* harmony default export */ var Control = (Control_exports_);
 // CONCATENATED MODULE: ./node_modules/watch-size/index.es.mjs
 var index_es_index = (function (element, listener) {
 	var expand = document.createElement('_');
@@ -7436,7 +7463,7 @@ function setupResizeAndScrollEventListeners($el, listener) {
     });
   };
 }
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Tip.vue?vue&type=script&lang=js
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Tip.vue?vue&type=script&lang=js
 
 
 /* harmony default export */ var Tipvue_type_script_lang_js = (Object(external_commonjs_vue_commonjs2_vue_root_Vue_["defineComponent"])({
@@ -7453,7 +7480,6 @@ function setupResizeAndScrollEventListeners($el, listener) {
     }
   },
   render: function render(context) {
-    var h = arguments[0];
     var type = this.type,
         icon = this.icon;
     return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
@@ -7471,8 +7497,11 @@ function setupResizeAndScrollEventListeners($el, listener) {
 
 
 
-/* harmony default export */ var Tip = (Tipvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Option.vue?vue&type=script&lang=js
+const Tip_exports_ = Tipvue_type_script_lang_js;
+
+/* harmony default export */ var Tip = (Tip_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Option.vue?vue&type=script&lang=js
+
 
 
 
@@ -7492,8 +7521,8 @@ function Optionvue_type_script_lang_js_isSlot(s) {
 
 var arrowPlaceholder, checkMark, minusMark;
 var Option = {
-  name: 'vue-treeselect--option',
-  inject: ['instance'],
+  name: "vue-treeselect--option",
+  inject: ["instance"],
   props: {
     node: {
       type: Object,
@@ -7514,16 +7543,15 @@ var Option = {
   },
   methods: {
     renderOption: function renderOption() {
-      var h = this.$createElement;
       var instance = this.instance,
           node = this.node;
       var optionClass = {
-        'vue-treeselect__option': true,
-        'vue-treeselect__option--disabled': node.isDisabled,
-        'vue-treeselect__option--selected': instance.isSelected(node),
-        'vue-treeselect__option--highlight': node.isHighlighted,
-        'vue-treeselect__option--matched': instance.localSearch.active && node.isMatched,
-        'vue-treeselect__option--hide': !this.shouldShow
+        "vue-treeselect__option": true,
+        "vue-treeselect__option--disabled": node.isDisabled,
+        "vue-treeselect__option--selected": instance.isSelected(node),
+        "vue-treeselect__option--highlight": node.isHighlighted,
+        "vue-treeselect__option--matched": instance.localSearch.active && node.isMatched,
+        "vue-treeselect__option--hide": !this.shouldShow
       };
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
         "class": optionClass,
@@ -7532,14 +7560,12 @@ var Option = {
       }, [this.renderArrow(), this.renderLabelContainer([this.renderCheckboxContainer([this.renderCheckbox()]), this.renderLabel()])]);
     },
     renderSubOptionsList: function renderSubOptionsList() {
-      var h = this.$createElement;
       if (!this.shouldExpand) return null;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
         "class": "vue-treeselect__list"
       }, [this.renderSubOptions(), this.renderNoChildrenTip(), this.renderLoadingChildrenTip(), this.renderLoadingChildrenErrorTip()]);
     },
     renderArrow: function renderArrow() {
-      var h = this.$createElement;
       var instance = this.instance,
           node = this.node;
       if (instance.shouldFlattenOptions && this.shouldShow) return null;
@@ -7548,13 +7574,13 @@ var Option = {
         var _slot;
 
         var arrowClass = {
-          'vue-treeselect__option-arrow': true,
-          'vue-treeselect__option-arrow--rotated': this.shouldExpand
+          "vue-treeselect__option-arrow": true,
+          "vue-treeselect__option-arrow--rotated": this.shouldExpand
         };
         return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
           "class": "vue-treeselect__option-arrow-container",
           "onMousedown": this.handleMouseDownOnArrow
-        }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("transition"), {
+        }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
           "name": "vue-treeselect__option-arrow--prepare",
           "appear": true
         }, Optionvue_type_script_lang_js_isSlot(_slot = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Arrow, {
@@ -7581,7 +7607,6 @@ var Option = {
       return null;
     },
     renderLabelContainer: function renderLabelContainer(children) {
-      var h = this.$createElement;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
         "class": "vue-treeselect__label-container",
         "onMousedown": this.handleMouseDownOnLabelContainer
@@ -7592,7 +7617,6 @@ var Option = {
       });
     },
     renderCheckboxContainer: function renderCheckboxContainer(children) {
-      var h = this.$createElement;
       var instance = this.instance,
           node = this.node;
       if (instance.single) return null;
@@ -7606,16 +7630,15 @@ var Option = {
       });
     },
     renderCheckbox: function renderCheckbox() {
-      var h = this.$createElement;
       var instance = this.instance,
           node = this.node;
       var checkedState = instance.forest.checkedStateMap[node.id];
       var checkboxClass = {
-        'vue-treeselect__checkbox': true,
-        'vue-treeselect__checkbox--checked': checkedState === CHECKED,
-        'vue-treeselect__checkbox--indeterminate': checkedState === INDETERMINATE,
-        'vue-treeselect__checkbox--unchecked': checkedState === UNCHECKED,
-        'vue-treeselect__checkbox--disabled': node.isDisabled
+        "vue-treeselect__checkbox": true,
+        "vue-treeselect__checkbox--checked": checkedState === CHECKED,
+        "vue-treeselect__checkbox--indeterminate": checkedState === INDETERMINATE,
+        "vue-treeselect__checkbox--unchecked": checkedState === UNCHECKED,
+        "vue-treeselect__checkbox--disabled": node.isDisabled
       };
       if (!checkMark) checkMark = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("span", {
         "class": "vue-treeselect__check-mark"
@@ -7628,14 +7651,13 @@ var Option = {
       }, [checkMark, minusMark]);
     },
     renderLabel: function renderLabel() {
-      var h = this.$createElement;
       var instance = this.instance,
           node = this.node;
       var shouldShowCount = node.isBranch && (instance.localSearch.active ? instance.showCountOnSearchComputed : instance.showCount);
       var count = shouldShowCount ? instance.localSearch.active ? instance.localSearch.countMap[node.id][instance.showCountOf] : node.count[instance.showCountOf] : NaN;
-      var labelClassName = 'vue-treeselect__label';
-      var countClassName = 'vue-treeselect__count';
-      var customLabelRenderer = instance.$slots['option-label'];
+      var labelClassName = "vue-treeselect__label";
+      var countClassName = "vue-treeselect__count";
+      var customLabelRenderer = instance.$slots["option-label"];
       if (customLabelRenderer) return customLabelRenderer({
         node: node,
         shouldShowCount: shouldShowCount,
@@ -7650,7 +7672,6 @@ var Option = {
       }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])("("), count, Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createTextVNode"])(")")])]);
     },
     renderSubOptions: function renderSubOptions() {
-      var h = this.$createElement;
       var node = this.node;
       if (!node.childrenStates.isLoaded) return null;
       return node.children.map(function (childNode) {
@@ -7661,7 +7682,6 @@ var Option = {
       });
     },
     renderNoChildrenTip: function renderNoChildrenTip() {
-      var h = this.$createElement;
       var instance = this.instance,
           node = this.node;
       if (!node.childrenStates.isLoaded || node.children.length) return null;
@@ -7675,7 +7695,6 @@ var Option = {
       });
     },
     renderLoadingChildrenTip: function renderLoadingChildrenTip() {
-      var h = this.$createElement;
       var instance = this.instance,
           node = this.node;
       if (!node.childrenStates.isLoading) return null;
@@ -7691,7 +7710,6 @@ var Option = {
     renderLoadingChildrenErrorTip: function renderLoadingChildrenErrorTip() {
       var _this = this;
 
-      var h = this.$createElement;
       var instance = this.instance,
           node = this.node;
       if (!node.childrenStates.loadingError) return null;
@@ -7740,23 +7758,22 @@ var Option = {
   render: function render() {
     var _slot2;
 
-    var h = arguments[0];
     var node = this.node;
     var indentLevel = this.instance.shouldFlattenOptions ? 0 : node.level;
 
     var listItemClass = _defineProperty({
-      'vue-treeselect__list-item': true
+      "vue-treeselect__list-item": true
     }, "vue-treeselect__indent-level-".concat(indentLevel), true);
 
     return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
       "class": listItemClass
-    }, [this.renderOption(), node.isBranch ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("transition"), {
+    }, [this.renderOption(), node.isBranch ? Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
       "name": "vue-treeselect__list--transition"
     }, Optionvue_type_script_lang_js_isSlot(_slot2 = this.renderSubOptionsList()) ? _slot2 : {
       default: function _default() {
         return [_slot2];
       }
-    }) : '']);
+    }) : ""]);
   }
 }; // eslint-disable-next-line vue/require-direct-export
 
@@ -7765,8 +7782,10 @@ var Option = {
 
 
 
-/* harmony default export */ var components_Option = (Optionvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Menu.vue?vue&type=script&lang=js
+const Option_exports_ = Optionvue_type_script_lang_js;
+
+/* harmony default export */ var components_Option = (Option_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Menu.vue?vue&type=script&lang=js
 
 
 
@@ -7783,19 +7802,19 @@ function Menuvue_type_script_lang_js_isSlot(s) {
 }
 
 var directionMap = {
-  top: 'top',
-  bottom: 'bottom',
-  above: 'top',
-  below: 'bottom'
+  top: "top",
+  bottom: "bottom",
+  above: "top",
+  below: "bottom"
 };
 /* harmony default export */ var Menuvue_type_script_lang_js = ({
-  name: 'vue-treeselect--menu',
-  inject: ['instance'],
+  name: "vue-treeselect--menu",
+  inject: ["instance"],
   computed: {
     menuStyle: function menuStyle() {
       var instance = this.instance;
       return {
-        maxHeight: instance.maxHeight + 'px'
+        maxHeight: instance.maxHeight + "px"
       };
     },
     menuContainerStyle: function menuContainerStyle() {
@@ -7806,7 +7825,7 @@ var directionMap = {
     }
   },
   watch: {
-    'instance.menu.isOpen': function instanceMenuIsOpen(newValue) {
+    "instance.menu.isOpen": function instanceMenuIsOpen(newValue) {
       if (newValue) {
         // In case `openMenu()` is just called and the menu is not rendered yet.
         this.$nextTick(this.onMenuOpen);
@@ -7828,7 +7847,6 @@ var directionMap = {
   },
   methods: {
     renderMenu: function renderMenu() {
-      var h = this.$createElement;
       var instance = this.instance;
       if (!instance.menu.isOpen) return null;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
@@ -7840,12 +7858,12 @@ var directionMap = {
     },
     renderBeforeList: function renderBeforeList() {
       var instance = this.instance;
-      var beforeListRenderer = instance.$slots['before-list'];
+      var beforeListRenderer = instance.$slots["before-list"];
       return beforeListRenderer ? beforeListRenderer() : null;
     },
     renderAfterList: function renderAfterList() {
       var instance = this.instance;
-      var afterListRenderer = instance.$slots['after-list'];
+      var afterListRenderer = instance.$slots["after-list"];
       return afterListRenderer ? afterListRenderer() : null;
     },
     renderNormalMenuInner: function renderNormalMenuInner() {
@@ -7879,7 +7897,7 @@ var directionMap = {
     renderAsyncSearchMenuInner: function renderAsyncSearchMenuInner() {
       var instance = this.instance;
       var entry = instance.getRemoteSearchEntry();
-      var shouldShowSearchPromptTip = instance.trigger.searchQuery === '' && !instance.defaultOptions;
+      var shouldShowSearchPromptTip = instance.trigger.searchQuery === "" && !instance.defaultOptions;
       var shouldShowNoResultsTip = shouldShowSearchPromptTip ? false : entry.isLoaded && entry.options.length === 0;
 
       if (shouldShowSearchPromptTip) {
@@ -7895,7 +7913,6 @@ var directionMap = {
       }
     },
     renderOptionList: function renderOptionList() {
-      var h = this.$createElement;
       var instance = this.instance;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
         "class": "vue-treeselect__list"
@@ -7907,7 +7924,6 @@ var directionMap = {
       })]);
     },
     renderSearchPromptTip: function renderSearchPromptTip() {
-      var h = this.$createElement;
       var instance = this.instance;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Tip, {
         "type": "search-prompt",
@@ -7919,7 +7935,6 @@ var directionMap = {
       });
     },
     renderLoadingOptionsTip: function renderLoadingOptionsTip() {
-      var h = this.$createElement;
       var instance = this.instance;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Tip, {
         "type": "loading",
@@ -7931,7 +7946,6 @@ var directionMap = {
       });
     },
     renderLoadingRootOptionsErrorTip: function renderLoadingRootOptionsErrorTip() {
-      var h = this.$createElement;
       var instance = this.instance;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Tip, {
         "type": "error",
@@ -7947,7 +7961,6 @@ var directionMap = {
       });
     },
     renderAsyncSearchLoadingErrorTip: function renderAsyncSearchLoadingErrorTip() {
-      var h = this.$createElement;
       var instance = this.instance;
       var entry = instance.getRemoteSearchEntry(); // TODO: retryTitle?
 
@@ -7965,7 +7978,6 @@ var directionMap = {
       });
     },
     renderNoAvailableOptionsTip: function renderNoAvailableOptionsTip() {
-      var h = this.$createElement;
       var instance = this.instance;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Tip, {
         "type": "no-options",
@@ -7977,7 +7989,6 @@ var directionMap = {
       });
     },
     renderNoResultsTip: function renderNoResultsTip() {
-      var h = this.$createElement;
       var instance = this.instance;
       return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Tip, {
         "type": "no-results",
@@ -8014,12 +8025,12 @@ var directionMap = {
 
       if (!isControlInViewport) {
         instance.closeMenu();
-      } else if (instance.openDirection !== 'auto') {
+      } else if (instance.openDirection !== "auto") {
         instance.menu.placement = directionMap[instance.openDirection];
       } else if (hasEnoughSpaceBelow || !hasEnoughSpaceAbove) {
-        instance.menu.placement = 'bottom';
+        instance.menu.placement = "bottom";
       } else {
-        instance.menu.placement = 'top';
+        instance.menu.placement = "top";
       }
     },
     setupMenuSizeWatcher: function setupMenuSizeWatcher() {
@@ -8054,12 +8065,11 @@ var directionMap = {
   render: function render() {
     var _slot;
 
-    var h = arguments[0];
     return Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
       "ref": "menu-container",
       "class": "vue-treeselect__menu-container",
       "style": this.menuContainerStyle
-    }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(Object(external_commonjs_vue_commonjs2_vue_root_Vue_["resolveComponent"])("transition"), {
+    }, [Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])(external_commonjs_vue_commonjs2_vue_root_Vue_["Transition"], {
       "name": "vue-treeselect__menu--transition"
     }, Menuvue_type_script_lang_js_isSlot(_slot = this.renderMenu()) ? _slot : {
       default: function _default() {
@@ -8072,8 +8082,10 @@ var directionMap = {
 
 
 
-/* harmony default export */ var Menu = (Menuvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/MenuPortal.vue?vue&type=script&lang=js
+const Menu_exports_ = Menuvue_type_script_lang_js;
+
+/* harmony default export */ var Menu = (Menu_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/MenuPortal.vue?vue&type=script&lang=js
 
 
 
@@ -8174,7 +8186,6 @@ var PortalTarget = {
     }
   },
   render: function render() {
-    var h = arguments[0];
     var instance = this.instance;
     var portalTargetClass = ['vue-treeselect__portal-target', instance.wrapperClass];
     var portalTargetStyle = {
@@ -8225,7 +8236,6 @@ var placeholder;
     }
   },
   render: function render() {
-    var h = arguments[0];
     if (!placeholder) placeholder = Object(external_commonjs_vue_commonjs2_vue_root_Vue_["createVNode"])("div", {
       "class": "vue-treeselect__menu-placeholder"
     }, null);
@@ -8236,8 +8246,10 @@ var placeholder;
 
 
 
-/* harmony default export */ var MenuPortal = (MenuPortalvue_type_script_lang_js);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Treeselect.vue?vue&type=script&lang=js
+const MenuPortal_exports_ = MenuPortalvue_type_script_lang_js;
+
+/* harmony default export */ var MenuPortal = (MenuPortal_exports_);
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--12-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--0-0!./node_modules/@vue/cli-service/node_modules/vue-loader-v16/dist??ref--0-1!./src/components/Treeselect.vue?vue&type=script&lang=js
 
 
 
@@ -8285,9 +8297,11 @@ var placeholder;
 
 
 
-Treeselectvue_type_script_lang_js.render = Treeselectvue_type_template_id_4fa337e8_render
 
-/* harmony default export */ var Treeselect = (Treeselectvue_type_script_lang_js);
+
+const Treeselect_exports_ = /*#__PURE__*/exportHelper_default()(Treeselectvue_type_script_lang_js, [['render',Treeselectvue_type_template_id_4fa337e8_render]])
+
+/* harmony default export */ var Treeselect = (Treeselect_exports_);
 // EXTERNAL MODULE: ./styles/style.less
 var style = __webpack_require__("d15f");
 
